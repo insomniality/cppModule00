@@ -1,4 +1,5 @@
-#include "phonebook.cpp"
+#include "PhoneBook.hpp"
+#include <iostream>
 
 int main()
 {
@@ -10,7 +11,7 @@ int main()
 		std::cout << "What should I do? : ";
 		std::cin >> input; //get_line
 		if (std::cin.fail())
-			return 0;
+			return (0);
 		if(input == "ADD") //if if if-n a aveli chist/arag te if, else if, else if, ete return ka bodyum
 			myPhoneBook.add();
 		else if(input.compare("SEARCH") == 0)

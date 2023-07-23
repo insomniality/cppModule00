@@ -12,6 +12,7 @@ void PhoneBook::add()
 {
 	std::string buff;
 
+	i = i % 8;
 	contacts[i].setIndex(i);
 	std::cout << "Enter your First Name : ";
 	std::cin >> buff;
@@ -33,7 +34,27 @@ void PhoneBook::add()
 
 void PhoneBook::search()
 {
+	int j;
+	std::string buff;
+	//demic to sagh tpi
+	while (true)
+	{
+		std::cin >> j;
+		
+		if (j < 0 || j > 7 || std::cin.fail())
+		{
+			std::cout << "Invalid input" << std:: endl;
+			continue ;
+		}
 
+		// std::cout << contacts[i].Index;
+		// std::cout << contacts[i].FirstName;
+		// std::cout << contacts[i].LastName;
+		// std::cout << contacts[i].NickName;
+		// if (i == 8)
+		// 	i = 0;
+	}
+	
 }
 
 void PhoneBook::searchPrint(int a, int b)
@@ -45,4 +66,3 @@ void PhoneBook::exit()
 {
 	std::exit(1);
 }
-

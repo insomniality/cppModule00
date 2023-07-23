@@ -1,4 +1,5 @@
-#include "PhoneBook.hpp"
+#include "PhoneBookMethods.cpp"
+#include "ContactMethods.cpp"
 #include <iostream>
 
 int main()

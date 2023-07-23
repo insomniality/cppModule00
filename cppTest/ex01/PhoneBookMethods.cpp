@@ -12,7 +12,6 @@ void PhoneBook::add()
 {
 	std::string buff;
 
-	i = i % 8;
 	contacts[i].setIndex(i);
 	std::cout << "Enter your First Name : ";
 	std::cin >> buff;
@@ -30,6 +29,23 @@ void PhoneBook::add()
 	std::cin >> buff;
 	contacts[i].setString(buff, "DS");
 	i++;
+	i = i % 8;
+}
+
+void PhoneBook::searchPrint(std::string *buff, std::string attribute)
+{
+	*buff = contacts[i].FirstName;
+	if (contacts[i].FirstName.length() > 10)
+	{
+		(*buff).insert(9, ".");
+		(*buff).resize(10);
+	}
+	else
+	{
+		for (int k = 0; k < 10 - contacts[i].FirstName.length(); k++)
+			(*buff).insert(0, " ");
+	}
+	std::cout << *buff << "|" << std::endl;
 }
 
 void PhoneBook::search()
@@ -39,6 +55,7 @@ void PhoneBook::search()
 	//demic to sagh tpi
 	while (true)
 	{
+		std::cout << "Enter Index : ";
 		std::cin >> j;
 		
 		if (j < 0 || j > 7 || std::cin.fail())
@@ -47,20 +64,17 @@ void PhoneBook::search()
 			continue ;
 		}
 
-		// std::cout << contacts[i].Index;
-		// std::cout << contacts[i].FirstName;
-		// std::cout << contacts[i].LastName;
-		// std::cout << contacts[i].NickName;
-		// if (i == 8)
-		// 	i = 0;
+		// searchPrint(&buff, contacts[i].Index);
+
+		searchPrint(&buff, contacts[i].FirstName);
+		searchPrint(&buff, contacts[i].LastName);
+		searchPrint(&buff, contacts[i].NickName);
+		if (i == 8)
+			i = 0;
 	}
 	
 }
 
-void PhoneBook::searchPrint(int a, int b)
-{
-
-}
 
 void PhoneBook::exit()
 {

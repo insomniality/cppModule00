@@ -4,10 +4,12 @@ void Contact::setIndex(int i)
 {
 	Index = i;
 }
+
 int Contact::getIndex()
 {
 	return Index;
 }
+
 void Contact::setString(std::string str, std::string attribute)
 {
 	if (attribute == "FN")
@@ -21,6 +23,7 @@ void Contact::setString(std::string str, std::string attribute)
 	else if (attribute == "DS")
 		DarkestSecret = str;
 }
+
 std::string Contact::getString(std::string attribute)
 {
 	if (attribute == "FN")
@@ -33,4 +36,5 @@ std::string Contact::getString(std::string attribute)
 		return (PhoneNumber);
 	else if (attribute == "DS")
 		return (DarkestSecret);
+	return ("err");
 }

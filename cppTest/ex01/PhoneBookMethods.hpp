@@ -1,3 +1,6 @@
+#ifndef PHONEBOOKMETHODS_HPP
+# define PHONEBOOKMETHODS_HPP
+
 #include <iostream>
 #include "PhoneBook.hpp"
 
@@ -34,18 +37,18 @@ void PhoneBook::add()
 
 void PhoneBook::searchPrint(std::string *buff, std::string attribute)
 {
-	*buff = contacts[i].FirstName;
-	if (contacts[i].FirstName.length() > 10)
+	*buff = attribute;
+	if (attribute.length() > 10)
 	{
-		(*buff).insert(9, ".");
-		(*buff).resize(10);
+		buff->insert(9, ".");
+		buff->resize(10);
 	}
 	else
 	{
-		for (int k = 0; k < 10 - contacts[i].FirstName.length(); k++)
-			(*buff).insert(0, " ");
+		for (int k = 0; k < 10 - attribute.length(); k++)
+			buff->insert(0, " ");
 	}
-	std::cout << *buff << "|" << std::endl;
+	std::cout << *buff << "|uwu" << std::endl;
 }
 
 void PhoneBook::search()
@@ -75,8 +78,9 @@ void PhoneBook::search()
 	
 }
 
-
 void PhoneBook::exit()
 {
 	std::exit(1);
 }
+
+#endif

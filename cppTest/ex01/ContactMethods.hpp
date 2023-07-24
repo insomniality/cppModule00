@@ -1,3 +1,6 @@
+#ifndef CONTACTMETHODS_HPP
+# define CONTACTMETHODS_HPP
+
 #include "Contact.hpp"
 
 void Contact::setIndex(int i)
@@ -38,3 +41,5 @@ std::string Contact::getString(std::string attribute)
 		return (DarkestSecret);
 	return ("err");
 }
+
+#endif

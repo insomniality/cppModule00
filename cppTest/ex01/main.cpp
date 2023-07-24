@@ -1,6 +1,5 @@
-#include "PhoneBookMethods.cpp"
-#include "ContactMethods.cpp"
-#include <iostream>
+#include "PhoneBookMethods.hpp"
+#include "ContactMethods.hpp"
 
 int main()
 {
@@ -20,6 +19,5 @@ int main()
 		else if(input.compare("EXIT") == 0)
 			myPhoneBook.exit();
 	}
-
 	// myPhoneBook.exit();
 }

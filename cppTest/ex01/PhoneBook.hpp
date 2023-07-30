@@ -6,14 +6,16 @@
 class PhoneBook
 {
 	private:
-		Contact contacts[8];
+
 	public:
+		Contact contacts[8];
 		int	i;
 		PhoneBook();
 		void add();
 		void search();
 		void exit();
-		void searchPrint(std::string *buff, std::string attribute);
+		void searchPrint(std::string attribute);
+
 };
 
 #endif

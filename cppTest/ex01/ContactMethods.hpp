@@ -15,6 +15,7 @@ int Contact::getIndex()
 
 void Contact::setString(std::string str, std::string attribute)
 {
+	std::cout << "ohayo => " + str << std::endl;
 	if (attribute == "FN")
 		FirstName = str;
 	else if (attribute == "LN")

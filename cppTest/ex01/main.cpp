@@ -3,8 +3,8 @@
 
 int main()
 {
-	PhoneBook myPhoneBook;
-	std::string input;
+	PhoneBook	myPhoneBook;
+	std::string	input;
 
 	while (true)
 	{

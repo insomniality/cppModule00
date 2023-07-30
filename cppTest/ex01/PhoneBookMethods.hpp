@@ -55,7 +55,7 @@ void PhoneBook::searchPrint(std::string attribute)
 	std::string buff;
 
 	buff = attribute;
-	std::cout << *attribute + " | owo" << std::endl;
+	std::cout << attribute + " | owo" << std::endl;
 	if (attribute.length() > 10)
 	{
 		buff.insert(9, ".");

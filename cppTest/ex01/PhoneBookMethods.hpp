@@ -55,44 +55,48 @@ void PhoneBook::searchPrint(std::string attribute)
 	std::string buff;
 
 	buff = attribute;
-	std::cout << attribute + " | owo" << std::endl;
-	if (attribute.length() > 10)
+	if (buff.length() > 10)
 	{
 		buff.insert(9, ".");
 		buff.resize(10);
 	}
 	else
-	{
 		for (int k = 0; k < 10 - attribute.length(); k++)
 			buff.insert(0, " ");
-	}
-	std::cout << buff << "|uwu" << std::endl;
+	std::cout << buff + "|";
 }
 
 void PhoneBook::search()
 {
 	int j;
 	//demic to sagh tpi
+	for (int i = 0; i < 8; i++)
+	{
+		std::cout << contacts[j].FirstName + "|";
+		std::cout << contacts[j].LastName + "|";
+		std::cout << contacts[j].NickName + "|";
+		std::cout << std::endl;
+	}
 	while (true)
 	{
 		std::cout << "Enter Index : ";
 		std::cin >> j;
-		
+
+		if (std::cin.fail())
+			return ;
 		if (j < 0 || j > 7 || std::cin.fail())
 		{
 			std::cout << "Invalid input" << std:: endl;
-			return ;
-			// continue ;
+			continue ;
 		}
 
 		// searchPrint(&buff, contacts[i].Index);
-
-		searchPrint(contacts[i].FirstName);
-		searchPrint(contacts[i].LastName);
-		searchPrint(contacts[i].NickName);
+		searchPrint(contacts[j].FirstName);
+		searchPrint(contacts[j].LastName);
+		searchPrint(contacts[j].NickName);
+		std::cout << std::endl;
 		i = i % 8;
 	}
-	
 }
 
 void PhoneBook::exit()

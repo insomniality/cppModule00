@@ -61,7 +61,7 @@ void PhoneBook::searchPrint(std::string attribute)
 		buff.resize(10);
 	}
 	else
-		for (int k = 0; k < 10 - attribute.length(); k++)
+		for (int k = 0; k < 10 - attribute.length(); k++) //TPEL CHEREZ NOR TOX FULL INFON, 10 SYMBOL + .Y TANEL ARAJIN ANGAM TPELU VRA
 			buff.insert(0, " ");
 	std::cout << buff + "|";
 }
@@ -70,33 +70,44 @@ void PhoneBook::search()
 {
 	int j;
 	//demic to sagh tpi
+	std::cout << "# |       NAME|   SURNAME|  NICKNAME|\n";
 	for (int i = 0; i < 8; i++)
 	{
-		std::cout << contacts[j].FirstName + "|";
-		std::cout << contacts[j].LastName + "|";
-		std::cout << contacts[j].NickName + "|";
-		std::cout << std::endl;
-	}
-	while (true)
-	{
-		std::cout << "Enter Index : ";
-		std::cin >> j;
-
-		if (std::cin.fail())
-			return ;
-		if (j < 0 || j > 7 || std::cin.fail())
+		// std::cout << contacts[i].FirstName + " | "; //POXEL GETTERNEROV
+		// std::cout << contacts[i].LastName + " | ";
+		// std::cout << contacts[i].NickName + " | ";
+		// std::cout << std::endl;
+		if (contacts[i].getIndex() != -1)
 		{
-			std::cout << "Invalid input" << std:: endl;
-			continue ;
+			std::cout << contacts[i].getIndex() << " | ";
+			searchPrint(contacts[i].getString("FN"));
+			searchPrint(contacts[i].getString("LN"));
+			searchPrint(contacts[i].getString("NN"));
+			std::cout << "\n";
 		}
-
-		// searchPrint(&buff, contacts[i].Index);
-		searchPrint(contacts[j].FirstName);
-		searchPrint(contacts[j].LastName);
-		searchPrint(contacts[j].NickName);
-		std::cout << std::endl;
-		i = i % 8;
 	}
+
+
+	std::cout << "Enter Index : ";
+	std::cin >> j;
+	// if (std::cin.fail())
+	// 	return ;
+	if (j < 0 || j > 7 || std::cin.fail())
+		std::cout << "Invalid input" << std:: endl;
+	// searchPrint(&buff, contacts[i].Index);
+	std::cout << "FIRST NAME: ";
+	std::cout << contacts[j].getString("FN");
+	std::cout << std::endl << "LAST NAME: ";
+	std::cout << contacts[j].getString("LN");
+	std::cout << std::endl << "NICK NAME: ";
+	std::cout << contacts[j].getString("NN");
+	std::cout << std::endl << "PHONE NUMBER: ";
+	std::cout << contacts[j].getString("PN");
+	std::cout << std::endl << "DARKEST SECRET: ";
+	std::cout << contacts[j].getString("DS");
+	std::cout << std::endl;
+	i = i % 8;
+	
 }
 
 void PhoneBook::exit()
